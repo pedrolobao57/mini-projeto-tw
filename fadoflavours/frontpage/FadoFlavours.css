@@ -1,8 +1,23 @@
 html, body {
     margin: 0;
     padding: 0;
-    width: 100vw;
     height: 100vh;
+    background-image: url(background.jpg);
+    position: relative;
+    overflow: hidden;
+    z-index: -2; /* move the shadow above the image */
+}
+
+body::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1; /* move the "shadow" in front of the image and behind the text */
 }
 
 * {
@@ -10,11 +25,7 @@ html, body {
     padding: 0;
 }
 
-body{
-    background-color: beige;
-}
-
-.Toolbar {
+.navbar {
     position: fixed;
     background: linear-gradient(135deg, #FFA500, #8B4513);
     width: 100vw;
@@ -25,13 +36,14 @@ body{
     border-bottom: 1px solid black;
 }
 
-.Toolbar-options {
+.navbar-options {
     margin-left: auto;
     padding-right: 15px;
 }
 
 .Logo {
     margin-left: 15px;
+    font-family: 'Kalnia', serif;
 }
 
 .button {
@@ -60,24 +72,34 @@ body{
 .button:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+    
 }
 
-.divdaddy {
-    display: inline-flex;
-    margin-top: 13vh;
-    align-items: center;
+
+.header {
+    padding-top: 150px;
+    display: flex ;
     justify-content: center;
-    text-align: center;
-    width: 100vw;
+    color: white;
+    font-family: 'Kalnia', serif;
+
+}
+.contentMain {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15%;
+    margin-left: 15% ;
+    margin-right: 15%;
+    margin-bottom: 15%;
 }
 
-.carnes, .peixes, .sobremesas, .bebidas {
-    background-image: url("paper.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 20vw;
-    border: 1px solid black;
-    border-radius: 10px;
-    height: 80vh;
+.textMain {
+    font-family: 'Kalnia', serif;
+    color: wheat;
+    font-size: 25px;
+    
+    
 }
+
+
 
